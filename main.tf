@@ -5,7 +5,8 @@ resource "aws_cloudwatch_log_group" "default" {
 }
 
 locals {
-  lambda_zip = "lambda/splunk-cloudwatch-logs-processor.zip"
+  # lambda_zip = "lambda/splunk-cloudwatch-logs-processor.zip"
+  lambda_zip = ".terraform/modules/splunk_lambda/lambda/splunk-cloudwatch-logs-processor.zip"
   tags       = merge({ Name = var.function_name }, var.tags)
 }
 
