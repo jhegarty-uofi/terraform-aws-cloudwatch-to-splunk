@@ -38,7 +38,7 @@ data "aws_iam_policy_document" "default" {
 
     resources = [format(
       "arn:aws:ssm:%s:%s:parameter/%s/*",
-      data.aws_region.current.name,
+      data.aws_region.current.region,
       data.aws_caller_identity.current.account_id,
       local.ssm_prefix,
     )]
